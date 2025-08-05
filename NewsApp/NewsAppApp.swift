@@ -11,7 +11,16 @@ import SwiftUI
 struct NewsAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                HomeView()
+                    .tabItem { Label("Home", systemImage: "house") }
+
+                LocationView()
+                    .tabItem { Label("Location", systemImage: "location") }
+
+                SearchView()
+                    .tabItem { Label("Search", systemImage: "magnifyingglass") }
+            }
         }
     }
 }
